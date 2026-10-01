@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Admin – Subharambh 2026</title>
+<style>
+:root{--navy:#0b1f4b;--navy2:#13306e;--gold:#c9a24b;--gold2:#f0d78c;--cream:#fbf6ea}
+*{box-sizing:border-box;margin:0}
+body{font-family:system-ui,-apple-system,'Segoe UI',sans-serif;background:var(--cream);color:var(--navy);min-height:100vh}
+.hide{display:none!important}
+.btn{background:var(--navy);color:var(--gold2);border:2px solid var(--gold);padding:10px 22px;border-radius:999px;font-weight:700;cursor:pointer;font-size:15px;font-family:inherit}
+.btn:hover{background:var(--navy2)}
+.btn.sm{padding:6px 14px;font-size:13px}
+.btn.del{background:#fff;color:#b71c1c;border-color:#e0a6a6}
+#login{min-height:100vh;display:grid;place-items:center;padding:20px}
+.box{background:#fff;border:2px solid var(--gold);border-radius:20px;padding:34px;max-width:420px;width:100%;text-align:center;box-shadow:0 20px 40px rgba(11,31,75,.2)}
+.box h1{font-size:26px;margin-bottom:6px}.box p{color:#4a5675;margin-bottom:20px}
+#err{margin-top:16px;color:#b71c1c;font-weight:600}
+header{background:var(--navy);color:#fff;padding:14px 4vw;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+header b{color:var(--gold2);font-size:20px}header span{font-size:14px;opacity:.85;margin-right:12px}
+main{padding:24px 4vw 50px;max-width:1300px;margin:auto}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin-bottom:20px}
+.stat{background:#fff;border:1.5px solid var(--gold);border-radius:14px;padding:12px 16px}
+.stat b{display:block;font-size:26px}.stat small{color:#4a5675}
+.bar{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px;align-items:center}
+.bar input,.bar select{padding:10px 12px;border:1.5px solid #b9c2d9;border-radius:10px;font:inherit;background:#fff}
+.bar input{flex:1;min-width:200px}
+.wrap{overflow-x:auto;background:#fff;border:1.5px solid var(--gold);border-radius:14px}
+table{width:100%;border-collapse:collapse;min-width:860px}
+th,td{padding:11px 12px;text-align:left;border-bottom:1px solid #e8e2cf;font-size:14px;white-space:nowrap}
+th{background:var(--navy);color:var(--gold2);position:sticky;top:0}
+tr:hover td{background:#fbf3dc}
+.empty{padding:30px;text-align:center;color:#4a5675}
+</style>
+</head>
+<body>
+
+<div id="login">
+  <div class="box">
+    <h1>Subharambh 2026</h1>
+    <p>Admin panel. Sign in with the admin Google account.</p>
+    <button class="btn" id="signin">Sign in with Google</button>
+    <div id="err" role="alert"></div>
+  </div>
+</div>
+
+<div id="panel" class="hide">
+  <header><b>Subharambh 2026 – Registrations</b><div><span id="who"></span><button class="btn sm" id="signout">Sign out</button></div></header>
+  <main>
+    <div class="stats" id="stats"></div>
+    <div class="bar">
+      <input id="q" type="search" placeholder="Search name, reg. no., mobile, branch">
+      <select id="fp"></select>
+      <select id="fy"><option value="">All years</option><option>1st Year</option><option>2nd Year</option><option>3rd Year</option></select>
+      <button class="btn sm" id="csv">Download CSV</button>
+    </div>
+    <div class="wrap"><table>
+      <thead><tr><th>#</th><th>Time</th><th>Program</th><th>Name</th><th>Reg. no.</th><th>Mobile</th><th>Branch</th><th>Year</th><th></th></tr></thead>
+      <tbody id="rows"></tbody>
+    </table><div class="empty hide" id="empty">No registrations found.</div></div>
+  </main>
+</div>
+
+<script type="module">
+import { auth, db, ADMIN_EMAIL } from './firebase-config.js';
+import { GoogleAuthProvider, signInWithPopup, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+import { collection, query, orderBy, onSnapshot, deleteDoc, doc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+const $=id=>document.getElementById(id);
+const PROGRAMS=["Welcome Song","Welcome Dance","Mr. Fresher & Mrs. Fresher","Singing Performance","Group Dance Performance","Fashion Show"];
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+let all=[],unsub=null;
+
+$('fp').innerHTML='<option value="">All programs</option>'+PROGRAMS.map(p=>`<option>${esc(p)}</option>`).join('');
+
+$('signin').onclick=async()=>{
+  $('err').textContent='';
+  try{await signInWithPopup(auth,new GoogleAuthProvider())}
+  catch(e){$('err').textContent='Sign-in failed. Allow pop-ups and try again.'}
+};
+$('signout').onclick=()=>signOut(auth);
+
+onAuthStateChanged(auth,async user=>{
+  if(unsub){unsub();unsub=null}
+  if(user&&user.email===ADMIN_EMAIL&&user.emailVerified){
+    $('login').classList.add('hide');$('panel').classList.remove('hide');$('who').textContent=user.email;
+    unsub=onSnapshot(query(collection(db,'registrations'),orderBy('createdAt','desc')),
+      snap=>{all=snap.docs.map(d=>({id:d.id,...d.data()}));render()},
+      ()=>{$('rows').innerHTML='';$('empty').classList.remove('hide');$('empty').textContent='Could not load data. Check Firestore rules and config.'});
+  }else{
+    $('panel').classList.add('hide');$('login').classList.remove('hide');
+    if(user){$('err').textContent='Access denied. This account is not the admin.';await signOut(auth)}
+  }
+});
+
+const when=r=>r.createdAt?.toDate?r.createdAt.toDate().toLocaleString('en-IN',{dateStyle:'medium',timeStyle:'short'}):'';
+function filtered(){
+  const t=$('q').value.trim().toLowerCase(),p=$('fp').value,y=$('fy').value;
+  return all.filter(r=>(!p||r.program===p)&&(!y||r.year===y)&&(!t||[r.name,r.regNo,r.mobile,r.branch].join(' ').toLowerCase().includes(t)));
+}
+function render(){
+  const list=filtered();
+  $('stats').innerHTML=`<div class="stat"><b>${all.length}</b><small>Total registrations</small></div>`+
+    PROGRAMS.map(p=>`<div class="stat"><b>${all.filter(r=>r.program===p).length}</b><small>${esc(p)}</small></div>`).join('');
+  $('rows').innerHTML=list.map((r,i)=>`<tr><td>${i+1}</td><td>${esc(when(r))}</td><td>${esc(r.program)}</td><td>${esc(r.name)}</td><td>${esc(r.regNo)}</td><td>${esc(r.mobile)}</td><td>${esc(r.branch)}</td><td>${esc(r.year)}</td><td><button class="btn sm del" data-id="${esc(r.id)}">Delete</button></td></tr>`).join('');
+  $('empty').classList.toggle('hide',list.length>0);$('empty').textContent='No registrations found.';
+}
+['q','fp','fy'].forEach(id=>$(id).addEventListener('input',render));
+$('rows').addEventListener('click',async e=>{
+  const id=e.target.dataset.id;if(!id)return;
+  if(confirm('Delete this registration permanently?'))try{await deleteDoc(doc(db,'registrations',id))}catch(_){alert('Delete failed.')}
+});
+$('csv').onclick=()=>{
+  const q=v=>'"'+String(v??'').replace(/"/g,'""')+'"';
+  const lines=[['Time','Program','Name','Registration Number','Mobile','Branch','Year'].map(q).join(',')].concat(
+    filtered().map(r=>[when(r),r.program,r.name,r.regNo,r.mobile,r.branch,r.year].map(q).join(',')));
+  const a=document.createElement('a');a.href=URL.createObjectURL(new Blob(['\ufeff'+lines.join('\n')],{type:'text/csv'}));
+  a.download='subharambh-2026-registrations.csv';a.click();
+};
+</script>
+</body>
+</html>

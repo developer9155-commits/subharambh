@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Register – Subharambh 2026 | Centurion University</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Playfair+Display:wght@600;700;800&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0b1f4b;--navy2:#13306e;--gold:#c9a24b;--gold2:#f0d78c;--cream:#fbf6ea;--ink:#14213d}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font-family:'Source Sans 3',system-ui,sans-serif;background:var(--cream);color:var(--ink);line-height:1.6;overflow-x:hidden}
+h1,h2,h3{font-family:'Playfair Display',Georgia,serif;color:var(--navy);line-height:1.15}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+#bg{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+#bg i{position:absolute;bottom:-20px;width:var(--s);height:var(--s);border-radius:50%;background:radial-gradient(circle at 30% 30%,#fff,var(--gold) 60%,transparent 72%);opacity:.55;animation:rise var(--d) linear infinite;animation-delay:var(--l)}
+@keyframes rise{to{transform:translateY(-110vh) translateX(var(--x));opacity:0}}
+nav,.hero,section,footer,.ribbon{position:relative;z-index:1}
+nav{display:flex;justify-content:space-between;align-items:center;padding:14px 5vw;background:linear-gradient(90deg,var(--navy),var(--navy2));color:#fff;position:sticky;top:0;z-index:10;box-shadow:0 6px 18px rgba(11,31,75,.35)}
+nav b{font-family:'Playfair Display',serif;font-size:1.25rem;color:var(--gold2)}
+nav div a{margin-left:20px;text-decoration:none;font-weight:600;position:relative}
+nav div a::after{content:"";position:absolute;left:0;bottom:-3px;height:2px;width:0;background:var(--gold2);transition:width .3s}
+nav div a:hover::after{width:100%}
+.hero{text-align:center;padding:56px 5vw 70px;background:radial-gradient(ellipse at 50% 0,rgba(255,255,255,.9),rgba(251,246,234,.2) 70%);border-bottom:3px double var(--gold);perspective:900px}
+.uni{display:inline-block;background:var(--navy);color:var(--gold2);padding:6px 20px;border-radius:999px;border:1.5px solid var(--gold);font-weight:600;margin-bottom:22px;animation:drop .9s cubic-bezier(.2,.9,.3,1.3) both}
+@keyframes drop{from{opacity:0;transform:translateY(-30px)}}
+.stage{height:150px;display:grid;place-items:center;margin-bottom:10px;perspective:700px}
+.cube{width:90px;height:90px;position:relative;transform-style:preserve-3d;animation:spin 14s linear infinite}
+.cube span{position:absolute;inset:0;display:grid;place-items:center;background:linear-gradient(135deg,var(--navy),var(--navy2));border:2px solid var(--gold);box-shadow:inset 0 0 22px rgba(240,215,140,.45)}
+.cube span:nth-child(1){transform:translateZ(45px)}.cube span:nth-child(2){transform:rotateY(90deg) translateZ(45px)}
+.cube span:nth-child(3){transform:rotateY(180deg) translateZ(45px)}.cube span:nth-child(4){transform:rotateY(-90deg) translateZ(45px)}
+.cube span:nth-child(5){transform:rotateX(90deg) translateZ(45px)}.cube span:nth-child(6){transform:rotateX(-90deg) translateZ(45px)}
+@keyframes spin{to{transform:rotateX(360deg) rotateY(360deg)}}
+.hero h1{font-size:clamp(2.4rem,9vw,5.8rem);font-weight:800;letter-spacing:-.5px;background:linear-gradient(100deg,var(--navy) 30%,var(--gold) 50%,var(--navy) 70%);background-size:250% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 5s ease-in-out infinite;text-shadow:0 0 1px rgba(0,0,0,.05)}
+@keyframes shine{0%{background-position:100% 0}100%{background-position:-100% 0}}
+.sub{letter-spacing:.5em;font-weight:700;color:var(--navy2);margin-top:6px}
+.script{font-family:'Pinyon Script',cursive;font-size:clamp(2.6rem,8vw,5rem);color:var(--navy);line-height:1.1;animation:float 4s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-8px)}}
+.hero p{max-width:600px;margin:14px auto 26px;font-size:1.1rem}
+.btn{display:inline-block;background:linear-gradient(180deg,var(--navy2),var(--navy));color:var(--gold2);border:2px solid var(--gold);padding:12px 28px;border-radius:999px;font-weight:700;text-decoration:none;cursor:pointer;font-size:1rem;font-family:inherit;box-shadow:0 6px 0 #061230,0 12px 20px rgba(11,31,75,.3);transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translateY(-3px)}
+.btn:active{transform:translateY(4px);box-shadow:0 2px 0 #061230}
+.pulse{animation:pulse 2.2s infinite}
+@keyframes pulse{0%{box-shadow:0 6px 0 #061230,0 0 0 0 rgba(201,162,75,.7)}70%,100%{box-shadow:0 6px 0 #061230,0 0 0 18px rgba(201,162,75,0)}}
+.ribbon{background:var(--navy);color:var(--gold2);overflow:hidden;white-space:nowrap;padding:10px 0;border-block:2px solid var(--gold);font-weight:600}
+.ribbon div{display:inline-block;animation:slide 26s linear infinite}
+@keyframes slide{to{transform:translateX(-50%)}}
+section{padding:64px 5vw;max-width:1000px;margin:auto}
+h2{font-size:2.1rem;text-align:center;margin-bottom:8px}
+.rule{width:90px;height:3px;background:var(--gold);margin:0 auto 30px;border-radius:3px}
+.about p{margin-bottom:14px;font-size:1.08rem}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:18px;margin-top:26px;perspective:900px}
+.t3{transform-style:preserve-3d;transition:transform .15s ease-out,box-shadow .3s;will-change:transform}
+.facts div{border:1.5px solid var(--gold);border-radius:16px;padding:16px 20px;background:#fff;box-shadow:0 14px 28px rgba(11,31,75,.15)}
+.facts b{display:block;color:var(--navy);font-family:'Playfair Display',serif}
+.list{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:24px;perspective:1000px}
+.pc{background:linear-gradient(160deg,#fff,#fbf3dc);border:2px solid var(--gold);border-radius:20px;padding:26px 22px 22px;position:relative;box-shadow:0 18px 34px rgba(11,31,75,.2);display:flex;flex-direction:column;gap:6px;min-height:230px}
+.pc:hover{box-shadow:0 28px 46px rgba(11,31,75,.32)}
+.num{width:50px;height:50px;border-radius:50%;background:var(--navy);color:#fff;border:3px solid var(--gold);display:grid;place-items:center;font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;transform:translateZ(40px)}
+.ico{position:absolute;top:12px;right:16px;width:78px;transform:translateZ(55px) rotate(var(--r,8deg));animation:float 3.5s ease-in-out infinite}
+.stk{display:block;width:100%;height:auto;filter:drop-shadow(2.5px 0 0 #fff) drop-shadow(-2.5px 0 0 #fff) drop-shadow(0 2.5px 0 #fff) drop-shadow(0 -2.5px 0 #fff) drop-shadow(0 7px 6px rgba(0,0,0,.35))}
+.cube span .stk{width:64px}
+.pc h3{font-size:1.3rem;margin-top:10px;transform:translateZ(25px)}
+.pc small{color:#4a5675;font-size:.98rem}
+.pc .btn{margin-top:auto;align-self:flex-start;padding:9px 22px;font-size:.95rem;transform:translateZ(30px)}
+.pc .btn:hover{transform:translateZ(30px) translateY(-3px)}
+.rv{opacity:0;transform:translateY(40px) rotateX(12deg);transition:opacity .8s,transform .8s}
+.rv.in{opacity:1;transform:none}
+footer{background:linear-gradient(90deg,var(--navy),var(--navy2));color:#dfe5f5;text-align:center;padding:26px 5vw;border-top:4px solid var(--gold)}
+.card{background:linear-gradient(160deg,#fff,#fbf3dc);border:2px solid var(--gold);border-radius:20px;padding:28px;max-width:580px;margin:0 auto;box-shadow:0 24px 50px rgba(11,31,75,.28)}
+.wrap{perspective:1100px}
+label{display:block;font-weight:600;margin:14px 0 4px;color:var(--navy)}
+input,select{width:100%;padding:11px 12px;border:1.5px solid #b9c2d9;border-radius:10px;font:inherit;background:#fff;transition:border-color .2s,box-shadow .2s,transform .2s}
+input:focus,select:focus{border-color:var(--navy);box-shadow:0 6px 16px rgba(11,31,75,.18);transform:translateY(-2px)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.card .btn{width:100%;margin-top:24px}
+#msg{margin-top:18px;padding:12px;border-radius:10px;display:none;text-align:center;font-weight:600}
+#msg.ok{display:block;background:#e6f4ea;color:#1b5e20;animation:pop .6s cubic-bezier(.2,.9,.3,1.4)}
+#msg.err{display:block;background:#fdecea;color:#b71c1c}
+@keyframes pop{from{opacity:0;transform:scale(.6) rotateX(60deg)}}
+
+.ov{position:fixed;inset:0;z-index:50;background:rgba(11,31,75,.78);display:none;place-items:center;padding:20px;perspective:900px;overflow:hidden}
+.ov.show{display:grid;animation:fade .4s}
+@keyframes fade{from{opacity:0}}
+.box{position:relative;z-index:2;background:linear-gradient(160deg,#fff,#fbf3dc);border:3px solid var(--gold);border-radius:22px;padding:32px 28px;max-width:440px;width:100%;text-align:center;box-shadow:0 30px 70px rgba(0,0,0,.45);animation:boxin .8s cubic-bezier(.2,.9,.3,1.3)}
+@keyframes boxin{from{opacity:0;transform:scale(.5) rotateX(50deg) translateY(60px)}}
+.chk{width:100px;height:100px;display:block;margin:0 auto 10px;animation:pop2 .6s 1.3s both}
+@keyframes pop2{40%{transform:scale(1.18)}}
+.chk .c{fill:var(--navy);stroke:var(--gold);stroke-width:2;stroke-dasharray:151;stroke-dashoffset:151;animation:draw .7s .3s forwards}
+.chk .p{fill:none;stroke:var(--gold2);stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:40;stroke-dashoffset:40;animation:draw .5s .9s forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.box h2{font-size:1.8rem;margin-bottom:8px;animation:up .6s 1.1s both}
+.box p{animation:up .6s 1.3s both}
+.acts{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:22px;animation:up .6s 1.5s both}
+@keyframes up{from{opacity:0;transform:translateY(16px)}}
+.cf{position:absolute;top:-24px;width:10px;height:16px;border-radius:2px;animation:fall var(--d) var(--l) ease-in forwards}
+@keyframes fall{to{transform:translate(var(--x),110vh) rotate(var(--rot))}}
+@media(max-width:520px){.two{grid-template-columns:1fr}nav div a{margin-left:12px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}#bg{display:none}}
+</style>
+</head>
+<body>
+<div id="bg" aria-hidden="true"></div>
+
+<nav><b>Subharambh 2026</b><div><a href="index.html">Home</a><a href="index.html#programme">Programme</a></div></nav>
+
+<section>
+  <h2>Register to participate</h2><div class="rule"></div>
+  <p style="text-align:center;margin:-14px 0 26px">Diploma Freshers Party · Centurion University</p>
+  <div class="wrap"><div class="card t3 rv" id="card">
+    <form id="f" action="https://formsubmit.co/ajax/developer9334@gmail.com" method="POST">
+      <input type="hidden" name="_subject" value="New Subharambh 2026 registration">
+      <input type="hidden" name="_template" value="table">
+      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+
+      <label for="program">Program</label>
+      <select id="program" name="Program" required></select>
+
+      <label for="name">Full name</label>
+      <input id="name" name="Name" required autocomplete="name">
+
+      <div class="two">
+        <div><label for="reg">Registration number</label><input id="reg" name="Registration Number" required></div>
+        <div><label for="mobile">Mobile number</label><input id="mobile" name="Mobile" type="tel" inputmode="numeric" pattern="[0-9]{10}" maxlength="10" title="Enter a 10-digit mobile number" required></div>
+      </div>
+
+      <div class="two">
+        <div><label for="branch">Branch</label>
+          <select id="branch" name="Branch" required>
+            <option value="">Select branch</option>
+            <option>Civil Engineering</option><option>Mechanical Engineering</option>
+            <option>Electrical Engineering</option><option>Electronics Engineering</option>
+            <option>Computer Science Engineering</option><option>Other</option>
+          </select></div>
+        <div><label for="year">Year</label>
+          <select id="year" name="Year" required>
+            <option value="">Select year</option><option>1st Year</option><option>2nd Year</option><option>3rd Year</option>
+          </select></div>
+      </div>
+
+      <button class="btn" id="go" type="submit">Register</button>
+      <div id="msg" role="status"></div>
+    </form>
+  </div></div>
+</section>
+
+<div class="ov" id="thanks" role="dialog" aria-modal="true" aria-labelledby="tt">
+  <div id="conf" aria-hidden="true"></div>
+  <div class="box">
+    <svg class="chk" viewBox="0 0 52 52" aria-hidden="true"><circle class="c" cx="26" cy="26" r="24"/><path class="p" d="M14 27l8 8 16-17"/></svg>
+    <h2 id="tt">Thanks for registering!</h2>
+    <p id="tm"></p>
+    <div class="acts"><a class="btn" href="index.html">Back to home</a><button class="btn" id="again" type="button">Register for another</button></div>
+  </div>
+</div>
+
+<footer>Subharambh 2026 · Diploma Freshers Party · Organised by Diploma students of Centurion University</footer>
+
+<script type="module">
+import { db } from './firebase-config.js';
+import { doc, setDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+const programs=["Welcome Song","Welcome Dance","Mr. Fresher & Mrs. Fresher","Singing Performance","Group Dance Performance","Fashion Show"];
+const sel=document.getElementById('program');
+const wanted=new URLSearchParams(location.search).get('program');
+sel.innerHTML='<option value="">Select program</option>'+programs.map(p=>`<option${p===wanted?' selected':''}>${p.replace('&','&amp;')}</option>`).join('');
+const th=document.getElementById('thanks');
+function showThanks(n,p){
+  document.getElementById('tm').textContent=n+', you are registered for '+p+'. See you at Subharambh 2026!';
+  const c=document.getElementById('conf');c.innerHTML='';
+  const cols=['#c9a24b','#f0d78c','#0b1f4b','#13306e','#ffffff'];
+  for(let i=0;i<70;i++){const e=document.createElement('i');e.className='cf';
+    e.style.cssText=`left:${Math.random()*100}%;background:${cols[i%5]};--d:${2.4+Math.random()*2.2}s;--l:${Math.random()*1.4}s;--x:${(Math.random()-.5)*160}px;--rot:${360+Math.random()*540}deg`;c.appendChild(e)}
+  th.classList.add('show');document.getElementById('again').focus();
+}
+function closeThanks(){th.classList.remove('show');sel.focus()}
+document.getElementById('again').addEventListener('click',closeThanks);
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeThanks()});
+const f=document.getElementById('f'),msg=document.getElementById('msg'),go=document.getElementById('go');
+f.addEventListener('submit',async e=>{
+  e.preventDefault();
+  go.disabled=true;go.textContent='Registering…';msg.className='';msg.style.display='none';
+  try{
+    const fd=new FormData(f);
+    const data={program:fd.get('Program'),name:fd.get('Name').trim(),regNo:fd.get('Registration Number').trim(),mobile:fd.get('Mobile').trim(),branch:fd.get('Branch'),year:fd.get('Year')};
+    const id=(data.program+'_'+data.regNo).toLowerCase().replace(/[^a-z0-9]+/g,'-');
+    let saved=false;
+    try{await setDoc(doc(db,'registrations',id),{...data,createdAt:serverTimestamp()});saved=true}
+    catch(err){if(err.code==='permission-denied')throw new Error('dup')}
+    const mail=fetch(f.action,{method:'POST',headers:{'Accept':'application/json'},body:fd}).then(r=>r.json()).then(d=>d.success!=='false').catch(()=>false);
+    if(!saved&&!(await mail))throw new Error('fail');
+    showThanks(data.name,data.program);
+    f.reset();sel.value=wanted||'';
+  }catch(err){
+    msg.className='err';
+    msg.textContent=err.message==='dup'?'This registration number is already registered for this program.':'Registration failed. Check your internet connection and try again.';
+  }
+  go.disabled=false;go.textContent='Register';
+});
+
+const bg=document.getElementById('bg');
+for(let i=0;i<22;i++){const e=document.createElement('i');
+e.style.cssText=`left:${Math.random()*100}%;--s:${6+Math.random()*14}px;--d:${9+Math.random()*12}s;--l:-${Math.random()*14}s;--x:${(Math.random()-.5)*120}px`;bg.appendChild(e)}
+function tilt(el,max){el.addEventListener('mousemove',e=>{const r=el.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
+el.style.transform=`rotateY(${x*max}deg) rotateX(${-y*max}deg) translateY(-6px)`});
+el.addEventListener('mouseleave',()=>el.style.transform='')}
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.15});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+
+tilt(document.getElementById('card'),5);
+</script>
+</body>
+</html>
