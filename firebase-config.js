@@ -5,12 +5,13 @@ import { getFirestore } from "https://www.gstatic.com/firebasejs/10.12.2/firebas
 import { getAuth } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
 export const firebaseConfig = {
-  apiKey: "PASTE_API_KEY",
-  authDomain: "PASTE_PROJECT_ID.firebaseapp.com",
-  projectId: "PASTE_PROJECT_ID",
-  storageBucket: "PASTE_PROJECT_ID.appspot.com",
-  messagingSenderId: "PASTE_SENDER_ID",
-  appId: "PASTE_APP_ID"
+  apiKey: "AIzaSyCMqsiMIOr_U7GLEFuz7yvoLJYtjFuGKas",
+  authDomain: "subharambh-94698.firebaseapp.com",
+  projectId: "subharambh-94698",
+  storageBucket: "subharambh-94698.firebasestorage.app",
+  messagingSenderId: "95009048427",
+  appId: "1:95009048427:web:7f5343d9cdced0a9e7ee2e",
+  measurementId: "G-77LMS6BXZE"
 };
 
 // Only this Google account can open the admin panel (also enforced in firestore.rules).
