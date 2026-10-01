@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Subharambh 2026 – Diploma Freshers Party | Centurion University</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Playfair+Display:wght@600;700;800&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0b1f4b;--navy2:#13306e;--gold:#c9a24b;--gold2:#f0d78c;--cream:#fbf6ea;--ink:#14213d}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font-family:'Source Sans 3',system-ui,sans-serif;background:var(--cream);color:var(--ink);line-height:1.6;overflow-x:hidden}
+h1,h2,h3{font-family:'Playfair Display',Georgia,serif;color:var(--navy);line-height:1.15}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+#bg{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+#bg i{position:absolute;bottom:-20px;width:var(--s);height:var(--s);border-radius:50%;background:radial-gradient(circle at 30% 30%,#fff,var(--gold) 60%,transparent 72%);opacity:.55;animation:rise var(--d) linear infinite;animation-delay:var(--l)}
+@keyframes rise{to{transform:translateY(-110vh) translateX(var(--x));opacity:0}}
+nav,.hero,section,footer,.ribbon{position:relative;z-index:1}
+nav{display:flex;justify-content:space-between;align-items:center;padding:14px 5vw;background:linear-gradient(90deg,var(--navy),var(--navy2));color:#fff;position:sticky;top:0;z-index:10;box-shadow:0 6px 18px rgba(11,31,75,.35)}
+nav b{font-family:'Playfair Display',serif;font-size:1.25rem;color:var(--gold2)}
+nav div a{margin-left:20px;text-decoration:none;font-weight:600;position:relative}
+nav div a::after{content:"";position:absolute;left:0;bottom:-3px;height:2px;width:0;background:var(--gold2);transition:width .3s}
+nav div a:hover::after{width:100%}
+.hero{text-align:center;padding:56px 5vw 70px;background:radial-gradient(ellipse at 50% 0,rgba(255,255,255,.9),rgba(251,246,234,.2) 70%);border-bottom:3px double var(--gold);perspective:900px}
+.uni{display:inline-block;background:var(--navy);color:var(--gold2);padding:6px 20px;border-radius:999px;border:1.5px solid var(--gold);font-weight:600;margin-bottom:22px;animation:drop .9s cubic-bezier(.2,.9,.3,1.3) both}
+@keyframes drop{from{opacity:0;transform:translateY(-30px)}}
+.stage{height:150px;display:grid;place-items:center;margin-bottom:10px;perspective:700px}
+.cube{width:90px;height:90px;position:relative;transform-style:preserve-3d;animation:spin 14s linear infinite}
+.cube span{position:absolute;inset:0;display:grid;place-items:center;background:linear-gradient(135deg,var(--navy),var(--navy2));border:2px solid var(--gold);box-shadow:inset 0 0 22px rgba(240,215,140,.45)}
+.cube span:nth-child(1){transform:translateZ(45px)}.cube span:nth-child(2){transform:rotateY(90deg) translateZ(45px)}
+.cube span:nth-child(3){transform:rotateY(180deg) translateZ(45px)}.cube span:nth-child(4){transform:rotateY(-90deg) translateZ(45px)}
+.cube span:nth-child(5){transform:rotateX(90deg) translateZ(45px)}.cube span:nth-child(6){transform:rotateX(-90deg) translateZ(45px)}
+@keyframes spin{to{transform:rotateX(360deg) rotateY(360deg)}}
+.hero h1{font-size:clamp(2.4rem,9vw,5.8rem);font-weight:800;letter-spacing:-.5px;background:linear-gradient(100deg,var(--navy) 30%,var(--gold) 50%,var(--navy) 70%);background-size:250% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 5s ease-in-out infinite;text-shadow:0 0 1px rgba(0,0,0,.05)}
+@keyframes shine{0%{background-position:100% 0}100%{background-position:-100% 0}}
+.sub{letter-spacing:.5em;font-weight:700;color:var(--navy2);margin-top:6px}
+.script{font-family:'Pinyon Script',cursive;font-size:clamp(2.6rem,8vw,5rem);color:var(--navy);line-height:1.1;animation:float 4s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-8px)}}
+.hero p{max-width:600px;margin:14px auto 26px;font-size:1.1rem}
+.btn{display:inline-block;background:linear-gradient(180deg,var(--navy2),var(--navy));color:var(--gold2);border:2px solid var(--gold);padding:12px 28px;border-radius:999px;font-weight:700;text-decoration:none;cursor:pointer;font-size:1rem;font-family:inherit;box-shadow:0 6px 0 #061230,0 12px 20px rgba(11,31,75,.3);transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translateY(-3px)}
+.btn:active{transform:translateY(4px);box-shadow:0 2px 0 #061230}
+.pulse{animation:pulse 2.2s infinite}
+@keyframes pulse{0%{box-shadow:0 6px 0 #061230,0 0 0 0 rgba(201,162,75,.7)}70%,100%{box-shadow:0 6px 0 #061230,0 0 0 18px rgba(201,162,75,0)}}
+.ribbon{background:var(--navy);color:var(--gold2);overflow:hidden;white-space:nowrap;padding:10px 0;border-block:2px solid var(--gold);font-weight:600}
+.ribbon div{display:inline-block;animation:slide 26s linear infinite}
+@keyframes slide{to{transform:translateX(-50%)}}
+section{padding:64px 5vw;max-width:1000px;margin:auto}
+h2{font-size:2.1rem;text-align:center;margin-bottom:8px}
+.rule{width:90px;height:3px;background:var(--gold);margin:0 auto 30px;border-radius:3px}
+.about p{margin-bottom:14px;font-size:1.08rem}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:18px;margin-top:26px;perspective:900px}
+.t3{transform-style:preserve-3d;transition:transform .15s ease-out,box-shadow .3s;will-change:transform}
+.facts div{border:1.5px solid var(--gold);border-radius:16px;padding:16px 20px;background:#fff;box-shadow:0 14px 28px rgba(11,31,75,.15)}
+.facts b{display:block;color:var(--navy);font-family:'Playfair Display',serif}
+.list{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:24px;perspective:1000px}
+.pc{background:linear-gradient(160deg,#fff,#fbf3dc);border:2px solid var(--gold);border-radius:20px;padding:26px 22px 22px;position:relative;box-shadow:0 18px 34px rgba(11,31,75,.2);display:flex;flex-direction:column;gap:6px;min-height:230px}
+.pc:hover{box-shadow:0 28px 46px rgba(11,31,75,.32)}
+.num{width:50px;height:50px;border-radius:50%;background:var(--navy);color:#fff;border:3px solid var(--gold);display:grid;place-items:center;font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;transform:translateZ(40px)}
+.ico{position:absolute;top:12px;right:16px;width:78px;transform:translateZ(55px) rotate(var(--r,8deg));animation:float 3.5s ease-in-out infinite}
+.stk{display:block;width:100%;height:auto;filter:drop-shadow(2.5px 0 0 #fff) drop-shadow(-2.5px 0 0 #fff) drop-shadow(0 2.5px 0 #fff) drop-shadow(0 -2.5px 0 #fff) drop-shadow(0 7px 6px rgba(0,0,0,.35))}
+.cube span .stk{width:64px}
+.pc h3{font-size:1.3rem;margin-top:10px;transform:translateZ(25px)}
+.pc small{color:#4a5675;font-size:.98rem}
+.pc .btn{margin-top:auto;align-self:flex-start;padding:9px 22px;font-size:.95rem;transform:translateZ(30px)}
+.pc .btn:hover{transform:translateZ(30px) translateY(-3px)}
+.rv{opacity:0;transform:translateY(40px) rotateX(12deg);transition:opacity .8s,transform .8s}
+.rv.in{opacity:1;transform:none}
+footer{background:linear-gradient(90deg,var(--navy),var(--navy2));color:#dfe5f5;text-align:center;padding:26px 5vw;border-top:4px solid var(--gold)}
+.card{background:linear-gradient(160deg,#fff,#fbf3dc);border:2px solid var(--gold);border-radius:20px;padding:28px;max-width:580px;margin:0 auto;box-shadow:0 24px 50px rgba(11,31,75,.28)}
+.wrap{perspective:1100px}
+label{display:block;font-weight:600;margin:14px 0 4px;color:var(--navy)}
+input,select{width:100%;padding:11px 12px;border:1.5px solid #b9c2d9;border-radius:10px;font:inherit;background:#fff;transition:border-color .2s,box-shadow .2s,transform .2s}
+input:focus,select:focus{border-color:var(--navy);box-shadow:0 6px 16px rgba(11,31,75,.18);transform:translateY(-2px)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.card .btn{width:100%;margin-top:24px}
+#msg{margin-top:18px;padding:12px;border-radius:10px;display:none;text-align:center;font-weight:600}
+#msg.ok{display:block;background:#e6f4ea;color:#1b5e20;animation:pop .6s cubic-bezier(.2,.9,.3,1.4)}
+#msg.err{display:block;background:#fdecea;color:#b71c1c}
+@keyframes pop{from{opacity:0;transform:scale(.6) rotateX(60deg)}}
+@media(max-width:520px){.two{grid-template-columns:1fr}nav div a{margin-left:12px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}#bg{display:none}}
+</style>
+</head>
+<body>
+<div id="bg" aria-hidden="true"></div>
+
+<nav><b>Subharambh 2026</b><div><a href="#about">About</a><a href="#programme">Programme</a></div></nav>
+
+<header class="hero">
+  <div class="uni">Centurion University of Technology and Management</div>
+  <div class="stage" aria-hidden="true"><div class="cube" id="cube"></div></div>
+  <h1>SUBHARAMBH 2026</h1>
+  <div class="sub">DIPLOMA</div>
+  <div class="script">Freshers Party</div>
+  <p>Organised by the Diploma students of Centurion University to welcome our new batch. Sing, dance, walk the ramp and begin your journey in style.</p>
+  <a class="btn pulse" href="#programme">See programme &amp; register</a>
+</header>
+
+<div class="ribbon" aria-hidden="true"><div>
+ Subharambh 2026 &nbsp;&bull;&nbsp; Centurion University &nbsp;&bull;&nbsp; Diploma Freshers Party &nbsp;&bull;&nbsp; Organised by Diploma Students &nbsp;&bull;&nbsp;
+ Subharambh 2026 &nbsp;&bull;&nbsp; Centurion University &nbsp;&bull;&nbsp; Diploma Freshers Party &nbsp;&bull;&nbsp; Organised by Diploma Students &nbsp;&bull;&nbsp;
+</div></div>
+
+<section id="about" class="about rv">
+  <h2>About the Freshers Party</h2><div class="rule"></div>
+  <p>Subharambh means "a good beginning". This freshers party is organised by the Diploma students of Centurion University to welcome first-year students and bring every year together for an evening of music, dance, fashion and fun.</p>
+  <p>The Chief Guests will select Mr. Fresher and Mrs. Fresher. Any student can take part in the performances by registering below.</p>
+  <div class="facts">
+    <div class="t3"><b>Event</b>Subharambh 2026</div>
+    <div class="t3"><b>Organised by</b>Diploma students, Centurion University</div>
+    <div class="t3"><b>Date &amp; venue</b>To be announced</div>
+  </div>
+</section>
+
+<section id="programme" class="rv">
+  <h2>Programme Schedule</h2><div class="rule"></div>
+  <div class="list" id="list"></div>
+</section>
+
+<footer>Subharambh 2026 · Diploma Freshers Party · Organised by Diploma students of Centurion University</footer>
+
+<script>
+const programs=[
+ ["Welcome Song","","cap"],
+ ["Welcome Dance","","dancer"],
+ ["Mr. Fresher & Mrs. Fresher","Walk – Selection by Chief Guests","crown"],
+ ["Singing Performance","Group","mic"],
+ ["Group Dance Performance","Western – Normal Song","disc"],
+ ["Fashion Show","Western – Corporate Look","tie"]
+];
+
+const G='#c9a24b',N='#0b1f4b',G2='#f0d78c',W='#fff';
+const STK={
+cap:`<svg class="stk" viewBox="0 0 100 100"><path d="M26 52v18q24 16 48 0V52L50 62z" fill="${N}" stroke="${G}" stroke-width="3" stroke-linejoin="round"/><path d="M50 20 95 40 50 60 5 40z" fill="${N}" stroke="${G}" stroke-width="4" stroke-linejoin="round"/><path d="M50 40 88 44v24" fill="none" stroke="${G2}" stroke-width="4" stroke-linecap="round"/><circle cx="88" cy="72" r="5" fill="${G}"/><path d="M85 74l-3 14M88 77v14M91 74l3 14" stroke="${G}" stroke-width="3" stroke-linecap="round"/></svg>`,
+mic:`<svg class="stk" viewBox="0 0 100 100"><rect x="38" y="50" width="24" height="42" rx="12" fill="${N}" stroke="${G}" stroke-width="3"/><circle cx="50" cy="32" r="22" fill="${G}" stroke="${N}" stroke-width="4"/><path d="M33 26h34M31 36h38M38 18l24 28M62 18L38 46" stroke="${N}" stroke-width="2.5" opacity=".6"/><rect x="38" y="62" width="24" height="6" fill="${G}"/><path d="M14 22q-8 12 0 24M86 22q8 12 0 24" fill="none" stroke="${G}" stroke-width="5" stroke-linecap="round"/></svg>`,
+dancer:`<svg class="stk" viewBox="0 0 100 100"><circle cx="50" cy="20" r="11" fill="${G}" stroke="${N}" stroke-width="3"/><path d="M50 32 28 90h44z" fill="${N}" stroke="${G}" stroke-width="3" stroke-linejoin="round"/><path d="M44 40 22 16M56 40 80 30" stroke="${G}" stroke-width="7" stroke-linecap="round"/><path d="M36 82q14 8 28 0" fill="none" stroke="${G2}" stroke-width="4" stroke-linecap="round"/><path d="M84 12v16" stroke="${N}" stroke-width="4"/><circle cx="80" cy="30" r="5" fill="${N}"/><path d="M84 12l8 5" stroke="${N}" stroke-width="4" stroke-linecap="round"/></svg>`,
+crown:`<svg class="stk" viewBox="0 0 100 100"><path d="M12 78V32l24 22 14-30 14 30 24-22v46z" fill="${G}" stroke="${N}" stroke-width="4" stroke-linejoin="round"/><rect x="12" y="74" width="76" height="12" rx="3" fill="${N}" stroke="${G}" stroke-width="3"/><circle cx="12" cy="30" r="6" fill="${N}"/><circle cx="50" cy="22" r="6" fill="${N}"/><circle cx="88" cy="30" r="6" fill="${N}"/><circle cx="50" cy="60" r="7" fill="${N}"/><path d="M26 62l4 4-4 4-4-4zM74 62l4 4-4 4-4-4z" fill="${N}"/></svg>`,
+disc:`<svg class="stk" viewBox="0 0 100 100"><circle cx="46" cy="54" r="40" fill="${N}" stroke="${G}" stroke-width="3"/><circle cx="46" cy="54" r="30" fill="none" stroke="${G}" stroke-width="1.5" opacity=".7"/><circle cx="46" cy="54" r="21" fill="none" stroke="${G}" stroke-width="1.5" opacity=".7"/><circle cx="46" cy="54" r="12" fill="${G}"/><circle cx="46" cy="54" r="3" fill="${N}"/><path d="M78 8v34" stroke="${G}" stroke-width="5" stroke-linecap="round"/><ellipse cx="70" cy="44" rx="9" ry="6.5" fill="${G}" transform="rotate(-20 70 44)"/><path d="M78 8q14 4 12 18" fill="none" stroke="${G}" stroke-width="5" stroke-linecap="round"/></svg>`,
+tie:`<svg class="stk" viewBox="0 0 100 100"><path d="M50 30 24 12 8 34l30 16zM50 30 76 12 92 34 62 50z" fill="${W}" stroke="${N}" stroke-width="3" stroke-linejoin="round"/><path d="M42 32h16l-3 14H45z" fill="${N}" stroke="${G}" stroke-width="2.5" stroke-linejoin="round"/><path d="M45 46h10l9 40-14 10-14-10z" fill="${N}" stroke="${G}" stroke-width="2.5" stroke-linejoin="round"/><path d="M47 62l12 6M45 74l16 8" stroke="${G}" stroke-width="3.5"/></svg>`
+};
+document.getElementById('cube').innerHTML=['cap','mic','dancer','crown','disc','tie'].map(k=>`<span>${STK[k]}</span>`).join('');
+document.getElementById('list').innerHTML=programs.map((p,i)=>
+ `<div class="pc t3"><div class="num">${i+1}</div><div class="ico" style="--r:${[-8,8,-6,7,-9,6][i]}deg" aria-hidden="true">${STK[p[2]]}</div><h3>${p[0].replace('&','&amp;')}</h3>${p[1]?`<small>${p[1]}</small>`:''}
+ <a class="btn" href="register.html?program=${encodeURIComponent(p[0])}">Participate</a></div>`).join('');
+
+const bg=document.getElementById('bg');
+for(let i=0;i<22;i++){const e=document.createElement('i');
+e.style.cssText=`left:${Math.random()*100}%;--s:${6+Math.random()*14}px;--d:${9+Math.random()*12}s;--l:-${Math.random()*14}s;--x:${(Math.random()-.5)*120}px`;bg.appendChild(e)}
+function tilt(el,max){el.addEventListener('mousemove',e=>{const r=el.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
+el.style.transform=`rotateY(${x*max}deg) rotateX(${-y*max}deg) translateY(-6px)`});
+el.addEventListener('mouseleave',()=>el.style.transform='')}
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.15});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+
+document.querySelectorAll('.pc').forEach(el=>tilt(el,14));
+document.querySelectorAll('.facts div').forEach(el=>tilt(el,10));
+</script>
+</body>
+</html>
